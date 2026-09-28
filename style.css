@@ -1,0 +1,117 @@
+/*Asterisco para seleccionar todo en general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Estilos base para mi pagina*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+/*encabeado*/
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #252525;
+    border-bottom: 4px solid #00ffcc;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #00ffcc;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+section {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+h2 {
+    color: #00ffcc;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/*Tarjetas : Lista Desordenada y los items de la lista*/
+ul {
+    /*quitar el tipo de lista (los puntos) y dejar libre*/
+    list-style-type: none;
+    /*activo el flexbox haciendo que las tarjetas se alinien horizontalmente*/
+    display: flex;
+    /*espacio entre cada tarjeta de la lista*/
+    gap: 20px;
+    /*activo el modo flexible para que cuando una tarjeta no quepa se pase abajo*/
+    flex-wrap: wrap;
+}
+
+li {
+    background-color: #252525;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #00ffcc;
+    /* Le decimos a la tarjeta que crezca o se encoja para que ocupe espacio disponible equilibrado */
+    flex: 1px;
+    /* Defino un ancho mínimo para que no se aplasten en pantallas pequeñas y se mantengan fijas*/
+    min-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* El :hover es un estado que se activa solo cuando el usuario pasa el cursor por encima. */
+li:hover {
+    /* movimiento en eje vertical hacia arriba */
+    transform: translateY(-5px);
+    /* efectos de sombra */
+    box-shadow: 0 10px 20px rgba(0, 255, 204, 0.342);
+}
+
+#btn-cambiar-tema {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #00ffcc;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn-cambiar-tema:hover {
+    background-color: #00ccaa;
+
+}
+
+/* tema para modo claro */
+body.tema-claro {
+    background-color: #e0e0e0;
+    color: #333333;
+}
+
+
+body.tema-claro header {
+    background-color: #fff;
+    border-bottom: 4px solid #ff0000;
+}
+
+body.tema-claro h2,
+body.tema-claro header p {
+    color: #ff0000;
+}
+
+body.tema-claro li {
+    background-color: #fff;
+    border-left: 4px solid #ff0000;
+    color: #333;
+}
