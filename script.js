@@ -44,9 +44,28 @@ function mostrarmisProyectos(proyectos) {
             <p>${proyecto.descripcion}</p>
             <small><strong>Tech:</strong> ${proyecto.tecnologias.join(', ')}</small>
         </li>`
+        //ahora si añadimos cada tarjeta individualmente con bucle
+        contenedorProyectos.innerHTML += tarjetaProyecto
     })
-    //ahora si añadimos cada tarjeta individualmente con bucle
-    contenedorProyectos.innerHTML += tarjetaProyecto
+
 }
 
 mostrarmisProyectos(misProyectos)
+
+
+/*implementamos la opcion de buscador*/
+const buscador = document.getElementById("buscador")
+
+buscador.addEventListener("input", (evento) => {
+    //convertimos texto todo a minusculas para evitar errores por mayudsculas etc
+    const textobusqueda = evento.target.value.toLowerCase()
+
+    const proyectosFlitrados = misProyectos.filter(proyecto => {
+        const coincideTitulo = proyecto.titulo.toLowerCase().includes(textobusqueda)
+        const coincideDescripcion = proyecto.titulo.toLocaleLowerCase().includes(textobusqueda)
+
+        return coincideTitulo || coincideDescripcion
+    })
+
+    mostrarmisProyectos(proyectosFlitrados)
+})

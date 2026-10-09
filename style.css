@@ -66,7 +66,7 @@ li {
     border-radius: 8px;
     border-left: 4px solid #00ffcc;
     /* Le decimos a la tarjeta que crezca o se encoja para que ocupe espacio disponible equilibrado */
-    flex: 1px;
+    flex: 1;
     /* Defino un ancho mínimo para que no se aplasten en pantallas pequeñas y se mantengan fijas*/
     min-width: 250px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
