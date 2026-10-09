@@ -11,6 +11,8 @@ body {
     background-color: #1a1a1a;
     color: #f0f0f0;
     line-height: 1.6;
+    /*vamos a agregar una transición para que el cambio de tema no sea tan brusco*/
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /*encabeado*/
@@ -19,6 +21,8 @@ header {
     padding: 60px 20px;
     background-color: #252525;
     border-bottom: 4px solid #00ffcc;
+    /*agregamos aqui tambien la transicion para que no se vea brusco*/
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 header h1 {
@@ -66,6 +70,8 @@ li {
     /* Defino un ancho mínimo para que no se aplasten en pantallas pequeñas y se mantengan fijas*/
     min-width: 250px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*transicion para el cambiode color */
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* El :hover es un estado que se activa solo cuando el usuario pasa el cursor por encima. */

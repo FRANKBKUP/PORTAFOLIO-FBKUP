@@ -8,3 +8,45 @@ botonCambioTema.addEventListener('click', () => {
     //esto se usa generlamente para cambios de tema como en este caso
     document.body.classList.toggle('tema-claro')
 })
+
+/*Vamos a Renderizar para de los li del proyecto en arrays usando array de objetos, esto me ayuda a no crear todo a mano (usaremos .forEach() y .map()*/
+
+const misProyectos = [
+    {
+        titulo: "Simulador de Dados",
+        descripcion: "Proyecto enfocado en la lógica de programación y el azar",
+        tecnologias: ["JavaScript", "HTML", "CSS"]
+    },
+    {
+        titulo: "Proyecto Frontend",
+        descripcion: "Interfaz moderna e interactiva para adquirir práctica en UX/UI.",
+        tecnologias: ["CSS grid", "Flexbox"]
+    },
+    {
+        titulo: "UrbanTwin Perú (En Planeación)",
+        descripcion: "Simulador de Riesgo de inundaciones en 2D",
+        tecnologias: ["Geospatial", "JS"]
+    }
+]
+
+/*Referencia a mi contenedor html*/
+const contenedorProyectos = document.getElementById("lista-proyectos")
+
+/*funcion para renderizar mis proyectos*/
+function mostrarmisProyectos(proyectos) {
+    //limpiamos el contenedor
+    contenedorProyectos.innerHTML = "";
+    proyectos.forEach(proyecto => {
+        //Creamos la tarjeta usando comillas invertidas
+        const tarjetaProyecto = `
+        <li>
+            <strong>${proyecto.titulo}</strong>
+            <p>${proyecto.descripcion}</p>
+            <small><strong>Tech:</strong> ${proyecto.tecnologias.join(', ')}</small>
+        </li>`
+    })
+    //ahora si añadimos cada tarjeta individualmente con bucle
+    contenedorProyectos.innerHTML += tarjetaProyecto
+}
+
+mostrarmisProyectos(misProyectos)
